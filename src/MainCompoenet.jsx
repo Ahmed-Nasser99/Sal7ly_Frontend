@@ -17,6 +17,10 @@ import MicrowaveIcon from "@mui/icons-material/Microwave";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
 
 import homeImageBackground from "./assets/Imgs/appliancesGroupHomeBackground.png";
+import Logo from "./assets/Imgs/Logo.png";
+import { AirplaneTicket, Phone, WhatsApp } from "@mui/icons-material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { brandData } from "./Brands";
 
 export default function MainComponent() {
   const [open, setOpen] = React.useState(true);
@@ -30,39 +34,29 @@ export default function MainComponent() {
 
   const phoneNumber = "+201102941029";
 
+  var brands = brandData;
   return (
     <div className="flex flex-col min-h-dvh">
-      <header className="px-4 lg:px-6 h-14 flex items-center w-[95%] mx-auto fixed top-0 left-0 right-0 z-50 rounded-b-lg bg-background shadow">
-        <Link to="/" className="flex items-center justify-center">
-          <HomeIcon className="size-6" />
-          <span className="sr-only">Acme Inc</span>
+      <header className="px-4 py-4 lg:px-6 h-14 flex items-center justify-between w-[95%] mx-auto fixed top-0 left-0 right-0 z-50 rounded-b-lg bg-background shadow overflow-hidden">
+        <Link href="#" className="flex items-center gap-2" prefetch={false}>
+          <div className="w-[150px] h-[90px] pt-2">
+            <img src={Logo} className="w-[100%] h-[100%]" />
+          </div>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
+        <div className="flex items-center gap-4">
+          <a href={`tel:${phoneNumber}`} className="flex items-center gap-1">
+            <Phone className="w-5 h-5" />
+            <span className="hidden sm:inline">{phoneNumber}</span>
+          </a>
           <Link
-            to="/features"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            href={`https://wa.me/${phoneNumber}`}
+            className="flex items-center gap-1"
+            prefetch={false}
           >
-            Features
+            <WhatsApp className="w-5 h-5" />
+            <span className="hidden sm:inline">WhatsApp</span>
           </Link>
-          <Link
-            to="/pricing"
-            className="text-sm font-medium hover:underline underline-offset-4"
-          >
-            Pricing
-          </Link>
-          <Link
-            to="/about"
-            className="text-sm font-medium hover:underline underline-offset-4"
-          >
-            About
-          </Link>
-          <Link
-            to="/contact"
-            className="text-sm font-medium hover:underline underline-offset-4"
-          >
-            Contact
-          </Link>
-        </nav>
+        </div>
       </header>
       <Dialog
         open={open}
@@ -85,7 +79,7 @@ export default function MainComponent() {
               </Button>
               <Button
                 variant="outlined"
-                startIcon={<LocalPhoneIcon />}
+                startIcon={<WhatsApp />}
                 component="a"
                 href={`https://wa.me/${phoneNumber}`}
               >
@@ -137,7 +131,7 @@ export default function MainComponent() {
               </Button>
               <Button
                 variant="outlined"
-                startIcon={<LocalPhoneIcon />}
+                startIcon={<WhatsApp />}
                 component="a"
                 href={`https://wa.me/${phoneNumber}`}
               >
@@ -277,53 +271,24 @@ export default function MainComponent() {
             </p>
           </div>
           <div className="divide-y rounded-lg border">
-            <div className="grid w-full grid-cols-3 items-stretch justify-center divide-x md:grid-cols-5">
-              <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img
-                  src="/placeholder.svg"
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                />
-              </div>
-              <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img
-                  src="/placeholder.svg"
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                />
-              </div>
-              <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img
-                  src="/placeholder.svg"
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                />
-              </div>
-              <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img
-                  src="/placeholder.svg"
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                />
-              </div>
-              <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img
-                  src="/placeholder.svg"
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                />
-              </div>
-            </div>
+            <Swiper
+              spaceBetween={50}
+              slidesPerView={3}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => console.log(swiper)}
+              autoplay={true}
+            >
+              {brands.map((e) => {
+                <SwiperSlide>
+                  <div className="card rounded-lg overflow-hidden">
+                    <img src={e.logo} alt={e.name} />
+                    <div className="">
+                      <span>{e.name}</span>
+                    </div>
+                  </div>
+                </SwiperSlide>;
+              })}
+            </Swiper>
           </div>
         </div>
       </section>
