@@ -20,8 +20,14 @@ import homeImageBackground from "./assets/Imgs/appliancesGroupHomeBackground.png
 import Logo from "./assets/Imgs/Logo.png";
 import { AirplaneTicket, Phone, WhatsApp } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { brandData } from "./Brands";
-
+import { brandData } from "./Brands.jsx";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/virtual";
+import { Navigation, Pagination, Virtual } from "swiper/modules";
 export default function MainComponent() {
   const [open, setOpen] = React.useState(true);
   const handleClickOpen = () => {
@@ -273,21 +279,25 @@ export default function MainComponent() {
           <div className="divide-y rounded-lg border">
             <Swiper
               spaceBetween={50}
-              slidesPerView={3}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
-              autoplay={true}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              modules={[Navigation, Pagination]}
             >
-              {brands.map((e) => {
-                <SwiperSlide>
-                  <div className="card rounded-lg overflow-hidden">
-                    <img src={e.logo} alt={e.name} />
+              {brands.map((e) => (
+                <SwiperSlide key={e.name}>
+                  <div className="card rounded-lg overflow-hidden bg-white w-[150px] h-[150px]">
+                    <img
+                      src={e.logo}
+                      alt={e.name}
+                      className="w-[100%] h-[100%]"
+                    />
                     <div className="">
                       <span>{e.name}</span>
                     </div>
                   </div>
-                </SwiperSlide>;
-              })}
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>
