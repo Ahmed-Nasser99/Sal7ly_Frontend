@@ -23,10 +23,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { brandData } from "./Brands.jsx";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import "swiper/css/virtual";
+import "swiper/css/navigation";
+
 import { Navigation, Pagination, Virtual } from "swiper/modules";
 export default function MainComponent() {
   const [open, setOpen] = React.useState(true);
@@ -276,16 +275,10 @@ export default function MainComponent() {
               brands.
             </p>
           </div>
-          <div className="divide-y rounded-lg border">
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={1}
-              navigation
-              pagination={{ clickable: true }}
-              modules={[Navigation, Pagination]}
-            >
+          <div className="divide-y rounded-lg border overflow-hidden">
+            <Swiper spaceBetween={10} slidesPerView={4}>
               {brands.map((e) => (
-                <SwiperSlide key={e.name}>
+                <SwiperSlide key={e.name} style={{ width: "auto" }}>
                   <div className="card rounded-lg overflow-hidden bg-white w-[150px] h-[150px]">
                     <img
                       src={e.logo}
