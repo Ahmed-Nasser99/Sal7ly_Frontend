@@ -416,6 +416,38 @@ export default function MainComponent() {
           </div>
         </div>
       </section>
+
+      <footer className="bg-muted py-6 mt-8">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <p className="text-muted-foreground text-sm">
+            &copy; 2024 Your <span className="text-[#09c]">Sal7ly</span>. All
+            rights reserved.
+          </p>
+          <nav className="flex items-center gap-4">
+            <Link
+              href="#"
+              className="text-muted-foreground hover:underline"
+              prefetch={false}
+            >
+              Privacy
+            </Link>
+            <Link
+              href="#"
+              className="text-muted-foreground hover:underline"
+              prefetch={false}
+            >
+              Terms
+            </Link>
+            <Link
+              href="#"
+              className="text-muted-foreground hover:underline"
+              prefetch={false}
+            >
+              Contact
+            </Link>
+          </nav>
+        </div>
+      </footer>
     </div>
   );
 }
