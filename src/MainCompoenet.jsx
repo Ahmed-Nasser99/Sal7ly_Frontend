@@ -39,6 +39,7 @@ import "swiper/css/navigation";
 import { Navigation, Pagination, Virtual } from "swiper/modules";
 import { servicesData } from "./Services.jsx";
 import { testimonialsData } from "./Testimonials.jsx";
+import LanguageSwitcher from "./LanguageSwitcher.jsx";
 export default function MainComponent() {
   const [open, setOpen] = React.useState(true);
   const handleClickOpen = () => {
@@ -77,6 +78,9 @@ export default function MainComponent() {
             <WhatsApp className="w-5 h-5 text-green-500" />
             <span className="hidden sm:inline">WhatsApp</span>
           </Link>
+        </div>
+        <div className="ml-4">
+          <LanguageSwitcher />
         </div>
       </header>
       <Dialog
