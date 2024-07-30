@@ -9,7 +9,6 @@ import {
   Typography,
   Link,
 } from "@mui/material";
-import HomeIcon from "@mui/icons-material/Home";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
 import KitchenIcon from "@mui/icons-material/Kitchen";
@@ -18,7 +17,7 @@ import AcUnitIcon from "@mui/icons-material/AcUnit";
 
 import homeImageBackground from "./assets/Imgs/appliancesGroupHomeBackground.png";
 import Logo from "./assets/Imgs/Logo.png";
-import { AirplaneTicket, Phone, WhatsApp } from "@mui/icons-material";
+import { Microwave, Phone, Tv, WhatsApp } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { brandData } from "./Brands.jsx";
 // Import Swiper styles
@@ -214,9 +213,7 @@ export default function MainComponent() {
             </Card>
             <Card>
               <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <LocalLaundryServiceIcon
-                  style={{ width: "5rem", height: "5rem" }}
-                />
+                <Microwave style={{ width: "5rem", height: "5rem" }} />
                 <Typography variant="h6" className="text-lg font-bold">
                   Dishwasher Repair
                 </Typography>
@@ -233,7 +230,7 @@ export default function MainComponent() {
               <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
                 <AcUnitIcon style={{ width: "5rem", height: "5rem" }} />
                 <Typography variant="h6" className="text-lg font-bold">
-                  AC Repair
+                  Air Condtion Repair
                 </Typography>
                 <Typography
                   variant="body2"
@@ -246,11 +243,9 @@ export default function MainComponent() {
             </Card>
             <Card>
               <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <LocalLaundryServiceIcon
-                  style={{ width: "5rem", height: "5rem" }}
-                />
+                <Tv style={{ width: "5rem", height: "5rem" }} />
                 <Typography variant="h6" className="text-lg font-bold">
-                  Dryer Repair
+                  TV Repair
                 </Typography>
                 <Typography
                   variant="body2"
@@ -278,16 +273,17 @@ export default function MainComponent() {
           <div className="divide-y rounded-lg border overflow-hidden">
             <Swiper spaceBetween={10} slidesPerView={4}>
               {brands.map((e) => (
-                <SwiperSlide key={e.name} style={{ width: "auto" }}>
-                  <div className="card rounded-lg overflow-hidden bg-white w-[150px] h-[150px]">
+                <SwiperSlide
+                  key={e.name}
+                  style={{ width: "auto" }}
+                  className="rounded-2xl"
+                >
+                  <div className="card p-1 rounded-lg overflow-hidden bg-white w-[100%] lg:h-[200px] h-[100px]">
                     <img
                       src={e.logo}
                       alt={e.name}
                       className="w-[100%] h-[100%]"
                     />
-                    <div className="text-center">
-                      <span>{e.name}</span>
-                    </div>
                   </div>
                 </SwiperSlide>
               ))}
@@ -304,7 +300,7 @@ export default function MainComponent() {
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Hear from our satisfied customers about their experience with
-                our appliance repair services.
+                our appliance repair services
               </p>
             </div>
           </div>
@@ -317,7 +313,7 @@ export default function MainComponent() {
                   I'm very satisfied with the service.&rdquo;
                 </blockquote>
                 <div>
-                  <div className="font-semibold">John Doe</div>
+                  <div className="font-semibold">John</div>
                   <div className="text-sm text-muted-foreground">
                     Satisfied Customer
                   </div>
