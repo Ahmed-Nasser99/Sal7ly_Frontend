@@ -8,6 +8,8 @@ import {
   CardContent,
   Typography,
   Link,
+  Input,
+  TextareaAutosize,
 } from "@mui/material";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
@@ -17,7 +19,16 @@ import AcUnitIcon from "@mui/icons-material/AcUnit";
 
 import homeImageBackground from "./assets/Imgs/appliancesGroupHomeBackground.png";
 import Logo from "./assets/Imgs/Logo.png";
-import { Microwave, Phone, Tv, WhatsApp } from "@mui/icons-material";
+import {
+  Email,
+  Label,
+  LocationCity,
+  Microwave,
+  MyLocation,
+  Phone,
+  Tv,
+  WhatsApp,
+} from "@mui/icons-material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { brandData } from "./Brands.jsx";
 // Import Swiper styles
@@ -37,7 +48,8 @@ export default function MainComponent() {
   };
 
   const phoneNumber = "+201102941029";
-
+  const email = "ahmednasserr86@gmail.com";
+  const location = "٢ شارع اليمني - أرض اللواء - حي العجوزة - محافظة الجيزة";
   var brands = brandData;
   return (
     <div className="flex flex-col min-h-dvh">
@@ -269,7 +281,7 @@ export default function MainComponent() {
         </div>
       </section>
       <section className="w-full py-6 md:py-12 lg:py-18 bg-muted">
-        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 min-w-[100%]">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
               Trusted Brands
@@ -279,8 +291,8 @@ export default function MainComponent() {
               brands.
             </p>
           </div>
-          <div className="divide-y rounded-lg border overflow-hidden">
-            <Swiper spaceBetween={10} slidesPerView={4}>
+          <div className="divide-y rounded-lg overflow-hidden">
+            <Swiper spaceBetween={10} slidesPerView={4} loop={true} autoplay>
               {brands.map((e) => (
                 <SwiperSlide
                   key={e.name}
@@ -362,37 +374,109 @@ export default function MainComponent() {
           </div>
         </div>
       </section>
-      <section className="container px-4 md:px-6 py-12 md:py-24 lg:py-32 flex flex-col items-center justify-center text-center">
-        <Typography
-          variant="h3"
-          className="text-3xl font-bold tracking-tighter sm:text-5xl"
-        >
-          Contact Us
-        </Typography>
-        <Typography
-          variant="body1"
-          className="mt-4 text-muted-foreground md:text-xl"
-        >
-          Ready to get your appliances fixed? Call us now!
-        </Typography>
-        <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
-          <Button
-            variant="contained"
-            color="primary"
-            startIcon={<LocalPhoneIcon />}
-            component="a"
-            href={`tel:${phoneNumber}`}
-          >
-            Call Us
-          </Button>
-          <Button
-            variant="outlined"
-            startIcon={<LocalPhoneIcon />}
-            component="a"
-            href={`https://wa.me/${phoneNumber}`}
-          >
-            WhatsApp
-          </Button>
+      <section className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
+        <div className="my-5">
+          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+            Contact Us
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="flex justify-center lg:justify-start">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d693.8995184123253!2d31.17989613369147!3d30.059597478605692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1722352321125!5m2!1sar!2seg"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                <LocalPhoneIcon
+                  style={{ width: "2rem", height: "2rem" }}
+                  className="text-green-500"
+                />
+                <Typography variant="h6" className="text-lg font-bold">
+                  Call Us
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground text-center"
+                >
+                  <a href={`tel:${phoneNumber}`} className="font-bold">
+                    {phoneNumber}
+                  </a>
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                <Email
+                  style={{ width: "2rem", height: "2rem" }}
+                  className="text-[#09c]"
+                />
+                <Typography variant="h6" className="text-lg font-bold">
+                  Email Us
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground text-center"
+                >
+                  <a href={`mailto:${email}`} className="font-bold">
+                    {email}
+                  </a>
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                <WhatsApp
+                  style={{ width: "2rem", height: "2rem" }}
+                  className="text-green-500"
+                />
+                <Typography variant="h6" className="text-lg font-bold">
+                  WhatsApp
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground text-center"
+                >
+                  <a
+                    href={`https://wa.me/${phoneNumber}`}
+                    className="font-bold"
+                  >
+                    {phoneNumber}
+                  </a>
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                <LocationCity
+                  style={{ width: "2rem", height: "2rem" }}
+                  className="text-[#09c]"
+                />
+                <Typography variant="h6" className="text-lg font-bold">
+                  Our Location
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground text-center"
+                >
+                  <a
+                    href={`https://maps.app.goo.gl/t6ogR3DfGoEo459i7`}
+                    className="font-bold"
+                  >
+                    {location}
+                  </a>
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
     </div>
