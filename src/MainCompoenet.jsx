@@ -37,6 +37,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Navigation, Pagination, Virtual } from "swiper/modules";
+import { servicesData } from "./Services.jsx";
+import { testimonialsData } from "./Testimonials.jsx";
 export default function MainComponent() {
   const [open, setOpen] = React.useState(true);
   const handleClickOpen = () => {
@@ -51,6 +53,9 @@ export default function MainComponent() {
   const email = "ahmednasserr86@gmail.com";
   const location = "٢ شارع اليمني - أرض اللواء - حي العجوزة - محافظة الجيزة";
   var brands = brandData;
+  var services = servicesData;
+  var testimonials = testimonialsData;
+
   return (
     <div className="flex flex-col min-h-dvh">
       <header className="px-4 py-4 lg:px-6 h-14 flex items-center justify-between w-[95%] mx-auto fixed top-0 left-0 right-0 z-50 rounded-b-lg bg-background shadow overflow-hidden">
@@ -119,7 +124,8 @@ export default function MainComponent() {
           </DialogActions>
         </DialogContent>
       </Dialog>
-      <section className="w-full pt-16 sm:pt-16 md:pt-16 md:pb-6 lg:pt-16 lg:pb-8 h-dvh">
+
+      <section className="w-full py-8 md:pt-10 md:pb-6 lg:pt-16 lg:pb-8 h-dvh">
         <div className="container px-2 md:px-4 grid gap-3 lg:grid-cols-[1fr_400px] lg:gap-4 xl:grid-cols-[1fr_600px] grid-flow-row w-[100%] max-w-[100%] h-[100%]">
           <img
             src={homeImageBackground}
@@ -131,8 +137,8 @@ export default function MainComponent() {
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <Typography
-                variant="h2"
-                className="font-bold tracking-tighter sm:text-1xl xl:text-3xl"
+                variant="h1"
+                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl"
               >
                 Sal7ly Appliance Repair
               </Typography>
@@ -167,7 +173,7 @@ export default function MainComponent() {
         </div>
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6 space-y-12">
+        <div className="container px-4 md:px-6 space-y-12 min-w-[100%]">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <Typography
@@ -185,101 +191,53 @@ export default function MainComponent() {
               </Typography>
             </div>
           </div>
-          <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <Card>
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <LocalLaundryServiceIcon
-                  style={{ width: "5rem", height: "5rem" }}
-                />
-                <Typography variant="h6" className="text-lg font-bold">
-                  Washing Machine Repair
-                </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground text-center"
+          <div className="mx-auto grid grid-cols-1 sm:grid-cols-3 md:hidden lg:grid gap-6">
+            {services.map((service, index) => (
+              <Card key={index}>
+                <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                  {service.icon}
+                  <Typography variant="h6" className="text-lg font-bold">
+                    {service.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    className="text-muted-foreground text-center"
+                  >
+                    {service.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="lg:hidden md:block">
+            <Swiper spaceBetween={10} slidesPerView={2} loop={true}>
+              {services.map((service, index) => (
+                <SwiperSlide
+                  key={index}
+                  style={{ width: "auto" }}
+                  className="rounded-2xl"
                 >
-                  Our experts can diagnose and repair any issue with your
-                  washing machine.
-                </Typography>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <KitchenIcon style={{ width: "5rem", height: "5rem" }} />
-                <Typography variant="h6" className="text-lg font-bold">
-                  Refrigerator Repair
-                </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground text-center"
-                >
-                  Keep your food fresh with our reliable refrigerator repair
-                  services.
-                </Typography>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <MicrowaveIcon style={{ width: "5rem", height: "5rem" }} />
-                <Typography variant="h6" className="text-lg font-bold">
-                  Oven Repair
-                </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground text-center"
-                >
-                  Trust our experts to fix any issues with your oven or cooktop.
-                </Typography>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <Microwave style={{ width: "5rem", height: "5rem" }} />
-                <Typography variant="h6" className="text-lg font-bold">
-                  MicroWave Repair
-                </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground text-center"
-                >
-                  Get your dishwasher back in top shape with our repair
-                  services.
-                </Typography>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <AcUnitIcon style={{ width: "5rem", height: "5rem" }} />
-                <Typography variant="h6" className="text-lg font-bold">
-                  Air Condtion Repair
-                </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground text-center"
-                >
-                  Stay cool and comfortable with our air conditioning repair
-                  services.
-                </Typography>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <Tv style={{ width: "5rem", height: "5rem" }} />
-                <Typography variant="h6" className="text-lg font-bold">
-                  TV Repair
-                </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground text-center"
-                >
-                  Get your clothes dry again with our expert dryer repair
-                  services.
-                </Typography>
-              </CardContent>
-            </Card>
+                  <Card>
+                    <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                      {service.icon}
+                      <Typography variant="h6" className="text-lg font-bold">
+                        {service.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        className="text-muted-foreground text-center"
+                      >
+                        {service.description}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
+
       <section className="w-full py-6 md:py-12 lg:py-18 bg-muted">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 min-w-[100%]">
           <div className="space-y-3">
@@ -325,55 +283,34 @@ export default function MainComponent() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <Card>
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <blockquote className="text-lg font-semibold leading-snug">
-                  &ldquo;The technician was very knowledgeable and was able to
-                  quickly diagnose and fix the issue with my washing machine.
-                  I'm very satisfied with the service.&rdquo;
-                </blockquote>
-                <div>
-                  <div className="font-semibold">John</div>
-                  <div className="text-sm text-muted-foreground">
-                    Satisfied Customer
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <blockquote className="text-lg font-semibold leading-snug">
-                  &ldquo;I was impressed with the professionalism and efficiency
-                  of the Sal7ly team. They were able to repair my refrigerator
-                  quickly and at a fair price.&rdquo;
-                </blockquote>
-                <div>
-                  <div className="font-semibold">Jane Smith</div>
-                  <div className="text-sm text-muted-foreground">
-                    Satisfied Customer
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <blockquote className="text-lg font-semibold leading-snug">
-                  &ldquo;I'm so glad I found Sal7ly Appliance Repair. They were
-                  able to fix my oven quickly and at a reasonable cost. I highly
-                  recommend their services.&rdquo;
-                </blockquote>
-                <div>
-                  <div className="font-semibold">Michael Johnson</div>
-                  <div className="text-sm text-muted-foreground">
-                    Satisfied Customer
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="">
+            <Swiper spaceBetween={10} slidesPerView={2} loop={true}>
+              {testimonials.map((testimonial, index) => (
+                <SwiperSlide
+                  key={index}
+                  style={{ width: "auto" }}
+                  className="rounded-2xl"
+                >
+                  <Card>
+                    <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                      <blockquote className="text-lg font-semibold leading-snug">
+                        &ldquo;{testimonial.quote}&rdquo;
+                      </blockquote>
+                      <div>
+                        <div className="font-semibold">{testimonial.name}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
+
       <section className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
         <div className="my-5">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
