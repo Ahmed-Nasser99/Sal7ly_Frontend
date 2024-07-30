@@ -300,7 +300,7 @@ export default function MainComponent() {
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Hear from our satisfied customers about their experience with
-                our appliance repair services
+                our appliance repair services.
               </p>
             </div>
           </div>
