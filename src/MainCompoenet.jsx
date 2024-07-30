@@ -40,6 +40,7 @@ import { Navigation, Pagination, Virtual } from "swiper/modules";
 import { servicesData } from "./Services.jsx";
 import { testimonialsData } from "./Testimonials.jsx";
 import LanguageSwitcher from "./LanguageSwitcher.jsx";
+import { useTranslation } from "react-i18next";
 export default function MainComponent() {
   const [open, setOpen] = React.useState(true);
   const handleClickOpen = () => {
@@ -49,6 +50,7 @@ export default function MainComponent() {
   const handleClose = () => {
     setOpen(false);
   };
+  const { t } = useTranslation(); // Initialize translation
 
   const phoneNumber = "+201102941029";
   const email = "ahmednasserr86@gmail.com";
@@ -76,7 +78,7 @@ export default function MainComponent() {
             prefetch={false}
           >
             <WhatsApp className="w-5 h-5 text-green-500" />
-            <span className="hidden sm:inline">WhatsApp</span>
+            <span className="hidden sm:inline">{t("whatsapp")}</span>
           </Link>
         </div>
         <div className="ml-4">

@@ -16,6 +16,7 @@ const LanguageSwitcher = () => {
   };
 
   const handleLocaleChange = (locale) => {
+    console.log(locale);
     i18n.changeLanguage(locale);
     handleClose();
   };
