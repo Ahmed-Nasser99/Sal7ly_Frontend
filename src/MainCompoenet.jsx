@@ -49,7 +49,7 @@ export default function MainComponent() {
         </Link>
         <div className="flex items-center gap-4">
           <a href={`tel:${phoneNumber}`} className="flex items-center gap-1">
-            <Phone className="w-5 h-5" />
+            <Phone className="w-5 h-5 text-green-500" />
             <span className="hidden sm:inline">{phoneNumber}</span>
           </a>
           <Link
@@ -57,7 +57,7 @@ export default function MainComponent() {
             className="flex items-center gap-1"
             prefetch={false}
           >
-            <WhatsApp className="w-5 h-5" />
+            <WhatsApp className="w-5 h-5 text-green-500" />
             <span className="hidden sm:inline">WhatsApp</span>
           </Link>
         </div>
@@ -69,8 +69,14 @@ export default function MainComponent() {
       >
         <DialogContent className="sm:max-w-[425px]">
           <div className="flex flex-col items-center justify-center gap-4 py-8">
-            <LocalPhoneIcon className="size-12 text-green-500" />
-            <Typography variant="body1" className="text-lg font-medium">
+            <LocalPhoneIcon
+              className="size-24 text-green-500 "
+              style={{ width: "3rem", height: "3rem" }}
+            />
+            <Typography
+              variant="body1"
+              className="text-lg font-medium text-center"
+            >
               Call us at{" "}
               <a href={`tel:${phoneNumber}`} className="font-bold">
                 {phoneNumber}
@@ -78,12 +84,15 @@ export default function MainComponent() {
               or chat with us on WhatsApp
             </Typography>
             <div className="flex gap-2">
-              <Button variant="outlined" startIcon={<LocalPhoneIcon />}>
+              <Button
+                variant="outlined"
+                startIcon={<LocalPhoneIcon className="text-green-500" />}
+              >
                 <a href={`tel:${phoneNumber}`}>Call</a>
               </Button>
               <Button
                 variant="outlined"
-                startIcon={<WhatsApp />}
+                startIcon={<WhatsApp className="text-green-500" />}
                 component="a"
                 href={`https://wa.me/${phoneNumber}`}
               >
@@ -126,7 +135,7 @@ export default function MainComponent() {
             <div className="flex flex-col justify-center gap-2 min-[400px]:flex-row">
               <Button
                 variant="contained"
-                color="primary"
+                color="success"
                 startIcon={<LocalPhoneIcon />}
                 component="a"
                 href={`tel:${phoneNumber}`}
@@ -135,7 +144,7 @@ export default function MainComponent() {
               </Button>
               <Button
                 variant="outlined"
-                startIcon={<WhatsApp />}
+                startIcon={<WhatsApp className="text-green-500" />}
                 component="a"
                 href={`https://wa.me/${phoneNumber}`}
               >
