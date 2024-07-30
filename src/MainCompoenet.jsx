@@ -215,7 +215,7 @@ export default function MainComponent() {
               <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
                 <Microwave style={{ width: "5rem", height: "5rem" }} />
                 <Typography variant="h6" className="text-lg font-bold">
-                  Dishwasher Repair
+                  MicroWave Repair
                 </Typography>
                 <Typography
                   variant="body2"
