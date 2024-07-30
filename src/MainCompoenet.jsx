@@ -285,7 +285,7 @@ export default function MainComponent() {
                       alt={e.name}
                       className="w-[100%] h-[100%]"
                     />
-                    <div className="">
+                    <div className="text-center">
                       <span>{e.name}</span>
                     </div>
                   </div>
