@@ -119,7 +119,7 @@ export default function MainComponent() {
           </DialogActions>
         </DialogContent>
       </Dialog>
-      <section className="w-full py-8 md:pt-10 md:pb-6 lg:pt-16 lg:pb-8 h-dvh">
+      <section className="w-full pt-16 sm:pt-16 md:pt-16 md:pb-6 lg:pt-16 lg:pb-8 h-dvh">
         <div className="container px-2 md:px-4 grid gap-3 lg:grid-cols-[1fr_400px] lg:gap-4 xl:grid-cols-[1fr_600px] grid-flow-row w-[100%] max-w-[100%] h-[100%]">
           <img
             src={homeImageBackground}
@@ -131,8 +131,8 @@ export default function MainComponent() {
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <Typography
-                variant="h1"
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl"
+                variant="h2"
+                className="font-bold tracking-tighter sm:text-1xl xl:text-3xl"
               >
                 Sal7ly Appliance Repair
               </Typography>
