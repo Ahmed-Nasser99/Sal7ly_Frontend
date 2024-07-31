@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -50,7 +50,11 @@ export default function MainComponent() {
   const handleClose = () => {
     setOpen(false);
   };
-  const { t } = useTranslation(); // Initialize translation
+
+  const { t, i18n } = useTranslation(); // Initialize translation
+  useEffect(() => {
+    document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
+  }, [i18n.language]);
 
   const phoneNumber = "+201102941029";
   const email = "ahmednasserr86@gmail.com";
@@ -67,22 +71,24 @@ export default function MainComponent() {
             <img src={Logo} className="w-[100%] h-[100%]" />
           </div>
         </Link>
-        <div className="flex items-center gap-4">
-          <a href={`tel:${phoneNumber}`} className="flex items-center gap-1">
-            <Phone className="w-5 h-5 text-green-500" />
-            <span className="hidden sm:inline">{phoneNumber}</span>
-          </a>
-          <Link
-            href={`https://wa.me/${phoneNumber}`}
-            className="flex items-center gap-1"
-            prefetch={false}
-          >
-            <WhatsApp className="w-5 h-5 text-green-500" />
-            <span className="hidden sm:inline">{t("whatsapp")}</span>
-          </Link>
-        </div>
-        <div className="ml-4">
-          <LanguageSwitcher />
+        <div className="flex gap-4 flex-row items-center">
+          <div className="flex items-center gap-4">
+            <a href={`tel:${phoneNumber}`} className="flex items-center gap-1">
+              <Phone className="w-5 h-5 text-green-500" />
+              <span className="hidden sm:inline">{phoneNumber}</span>
+            </a>
+            <Link
+              href={`https://wa.me/${phoneNumber}`}
+              className="flex items-center gap-1"
+              prefetch={false}
+            >
+              <WhatsApp className="w-5 h-5 text-green-500" />
+              <span className="hidden sm:inline">{t("whatsapp")}</span>
+            </Link>
+          </div>
+          <div className="ml-4">
+            <LanguageSwitcher />
+          </div>
         </div>
       </header>
       <Dialog
