@@ -56,7 +56,7 @@ export default function MainComponent() {
     document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
   }, [i18n.language]);
 
-  const phoneNumber = "+201102941029";
+  const phoneNumber = "01102941029";
   const email = "ahmednasserr86@gmail.com";
   const location = "٢ شارع اليمني - أرض اللواء - حي العجوزة - محافظة الجيزة";
   var brands = brandData;
@@ -79,10 +79,10 @@ export default function MainComponent() {
             </a>
             <Link
               href={`https://wa.me/${phoneNumber}`}
-              className="flex items-center gap-1"
+              className="flex items-center gap-3"
               prefetch={false}
             >
-              <WhatsApp className="w-5 h-5 text-green-500" />
+              <WhatsApp className="w-5 h-5  text-green-500" />
               <span className="hidden sm:inline">{t("whatsapp")}</span>
             </Link>
           </div>
@@ -106,32 +106,32 @@ export default function MainComponent() {
               variant="body1"
               className="text-lg font-medium text-center"
             >
-              Call us at{" "}
+              {t("call_us")}{" "}
               <a href={`tel:${phoneNumber}`} className="font-bold">
                 {phoneNumber}
               </a>{" "}
-              or chat with us on WhatsApp
+              {t("or_chat")} {t("on")} {t("whatsapp")}
             </Typography>
             <div className="flex gap-2">
               <Button
                 variant="outlined"
-                startIcon={<LocalPhoneIcon className="text-green-500" />}
+                startIcon={<LocalPhoneIcon className="text-green-500 mx-2" />}
               >
-                <a href={`tel:${phoneNumber}`}>Call</a>
+                <a href={`tel:${phoneNumber}`}>{t("call")}</a>
               </Button>
               <Button
                 variant="outlined"
-                startIcon={<WhatsApp className="text-green-500" />}
+                startIcon={<WhatsApp className="text-green-500 mx-2" />}
                 component="a"
                 href={`https://wa.me/${phoneNumber}`}
               >
-                WhatsApp
+                {t("whatsapp")}
               </Button>
             </div>
           </div>
           <DialogActions>
             <Button autoFocus onClick={handleClose}>
-              Close
+              {t("close")}
             </Button>
           </DialogActions>
         </DialogContent>
@@ -203,7 +203,7 @@ export default function MainComponent() {
               </Typography>
             </div>
           </div>
-          <div className="mx-auto grid grid-cols-1 sm:grid-cols-3 md:hidden lg:grid gap-6">
+          <div className="mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <Card key={index}>
                 <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
@@ -221,36 +221,10 @@ export default function MainComponent() {
               </Card>
             ))}
           </div>
-          <div className="lg:hidden md:block">
-            <Swiper spaceBetween={10} slidesPerView={2} loop={true}>
-              {services.map((service, index) => (
-                <SwiperSlide
-                  key={index}
-                  style={{ width: "auto" }}
-                  className="rounded-2xl"
-                >
-                  <Card>
-                    <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                      {service.icon}
-                      <Typography variant="h6" className="text-lg font-bold">
-                        {service.title}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        className="text-muted-foreground text-center"
-                      >
-                        {service.description}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
         </div>
       </section>
 
-      <section className="w-full py-6 md:py-12 lg:py-18 bg-muted">
+      {/* <section className="w-full py-6 md:py-12 lg:py-18 bg-muted">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 min-w-[100%]">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
@@ -281,8 +255,8 @@ export default function MainComponent() {
             </Swiper>
           </div>
         </div>
-      </section>
-      <section className="w-full py-6 md:py-8 lg:py-10">
+      </section> */}
+      {/* <section className="w-full py-6 md:py-8 lg:py-10">
         <div className="container px-4 md:px-6 space-y-12">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -321,7 +295,7 @@ export default function MainComponent() {
             </Swiper>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
         <div className="my-5">
