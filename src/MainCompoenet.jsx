@@ -106,7 +106,7 @@ export default function MainComponent() {
               variant="body1"
               className="text-lg font-medium text-center"
             >
-              {t("call_us")}{" "}
+              {t("call_us_at")}{" "}
               <a href={`tel:${phoneNumber}`} className="font-bold">
                 {phoneNumber}
               </a>{" "}
@@ -152,33 +152,32 @@ export default function MainComponent() {
                 variant="h1"
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl"
               >
-                Sal7ly Appliance Repair
+                {t("main_title")}
               </Typography>
               <Typography
                 variant="body1"
                 className="max-w-[600px] text-muted-foreground md:text-xl"
               >
-                Trusted appliance repair services for your home. Get your
-                appliances back in working order with our expert technicians.
+                {t("main_description")}
               </Typography>
             </div>
             <div className="flex flex-col justify-center gap-2 min-[400px]:flex-row">
               <Button
                 variant="contained"
                 color="success"
-                startIcon={<LocalPhoneIcon />}
+                startIcon={<LocalPhoneIcon className="mx-2" />}
                 component="a"
                 href={`tel:${phoneNumber}`}
               >
-                Call Us
+                {t("call_us")}
               </Button>
               <Button
                 variant="outlined"
-                startIcon={<WhatsApp className="text-green-500" />}
+                startIcon={<WhatsApp className="text-green-500 mx-2" />}
                 component="a"
                 href={`https://wa.me/${phoneNumber}`}
               >
-                WhatsApp
+                {t("whatsapp")}
               </Button>
             </div>
           </div>
@@ -192,14 +191,13 @@ export default function MainComponent() {
                 variant="h2"
                 className="text-3xl font-bold tracking-tighter sm:text-5xl"
               >
-                Our Services
+                {t("our_services")}
               </Typography>
               <Typography
                 variant="body1"
                 className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
               >
-                We offer a wide range of appliance repair services to keep your
-                home running smoothly.
+                {t("services_description")}
               </Typography>
             </div>
           </div>
@@ -224,15 +222,14 @@ export default function MainComponent() {
         </div>
       </section>
 
-      {/* <section className="w-full py-6 md:py-12 lg:py-18 bg-muted">
+      <section className="w-full py-6 md:py-12 lg:py-18 bg-muted">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 min-w-[100%]">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-              Trusted Brands
+              {t("trusted_brands")}
             </h2>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              We are authorized service providers for these leading appliance
-              brands.
+              {t("brands_description")}
             </p>
           </div>
           <div className="divide-y rounded-lg overflow-hidden">
@@ -255,17 +252,16 @@ export default function MainComponent() {
             </Swiper>
           </div>
         </div>
-      </section> */}
-      {/* <section className="w-full py-6 md:py-8 lg:py-10">
+      </section>
+      <section className="w-full py-6 md:py-8 lg:py-10">
         <div className="container px-4 md:px-6 space-y-12">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                What Our Customers Say
+                {t("customer_feedback")}
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Hear from our satisfied customers about their experience with
-                our appliance repair services.
+                {t("feedback_description")}
               </p>
             </div>
           </div>
@@ -295,12 +291,12 @@ export default function MainComponent() {
             </Swiper>
           </div>
         </div>
-      </section> */}
+      </section>
 
       <section className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
         <div className="my-5">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-            Contact Us
+            {t("contact_us")}
           </h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -323,7 +319,7 @@ export default function MainComponent() {
                   className="text-green-500"
                 />
                 <Typography variant="h6" className="text-lg font-bold">
-                  Call Us
+                  {t("contact_us")}
                 </Typography>
                 <Typography
                   variant="body2"
@@ -343,7 +339,7 @@ export default function MainComponent() {
                   className="text-[#09c]"
                 />
                 <Typography variant="h6" className="text-lg font-bold">
-                  Email Us
+                  {t("email_us")}
                 </Typography>
                 <Typography
                   variant="body2"
@@ -362,7 +358,7 @@ export default function MainComponent() {
                   className="text-green-500"
                 />
                 <Typography variant="h6" className="text-lg font-bold">
-                  WhatsApp
+                  {t("whatsapp")}
                 </Typography>
                 <Typography
                   variant="body2"
@@ -384,7 +380,7 @@ export default function MainComponent() {
                   className="text-[#09c]"
                 />
                 <Typography variant="h6" className="text-lg font-bold">
-                  Our Location
+                  {t("our_location")}
                 </Typography>
                 <Typography
                   variant="body2"
