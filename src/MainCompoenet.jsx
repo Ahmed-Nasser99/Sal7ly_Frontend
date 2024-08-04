@@ -8,6 +8,7 @@ import {
   CardContent,
   Typography,
   Link,
+  Avatar,
 } from "@mui/material";
 import {
   LocalPhone as LocalPhoneIcon,
@@ -15,6 +16,7 @@ import {
   WhatsApp,
   Phone,
   LocationCity,
+  Star,
 } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -186,12 +188,17 @@ export default function MainComponent() {
           </div>
           <div>
             <Swiper
-              modules={[Navigation, Pagination, Virtual]}
+              modules={[Navigation, Pagination, Virtual, Autoplay]}
               slidesPerView={4}
               spaceBetween={30}
               loop
               autoplay={{
-                delay: 100,
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              centeredSlides={true}
+              pagination={{
+                clickable: true,
               }}
               breakpoints={{
                 320: { slidesPerView: 1, spaceBetween: 10 },
@@ -199,10 +206,10 @@ export default function MainComponent() {
                 640: { slidesPerView: 2, spaceBetween: 30 },
                 1024: { slidesPerView: 4, spaceBetween: 40 },
               }}
-              className="py-3"
+              className="py-3 mx-auto"
             >
               {services.map((service, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className="mx-auto">
                   <Card key={index} className="min-h-[250px]">
                     <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
                       {service.icon}
@@ -241,17 +248,26 @@ export default function MainComponent() {
             </Typography>
           </div>
           <Swiper
-            modules={[Navigation, Pagination, Virtual]}
+            modules={[Navigation, Pagination, Virtual, Autoplay]}
             slidesPerView={4}
             spaceBetween={30}
+            centeredSlides={true}
             navigation
             loop
             breakpoints={{
-              320: { slidesPerView: 2, spaceBetween: 10 },
-              480: { slidesPerView: 2, spaceBetween: 20 },
+              320: { slidesPerView: 1, spaceBetween: 10 },
+              480: { slidesPerView: 1, spaceBetween: 20 },
               640: { slidesPerView: 2, spaceBetween: 30 },
               1024: { slidesPerView: 4, spaceBetween: 40 },
             }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            className="p-3"
           >
             {brands.map((brand, index) => (
               <SwiperSlide key={index}>
@@ -287,13 +303,20 @@ export default function MainComponent() {
             </div>
           </div>
           <Swiper
-            className="py-3"
-            modules={[Navigation, Pagination, Virtual]}
+            className="p-3"
+            modules={[Navigation, Pagination, Virtual, Autoplay]}
             slidesPerView={1}
             spaceBetween={30}
             navigation
-            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
             loop
+            centeredSlides={true}
             breakpoints={{
               640: { slidesPerView: 2, spaceBetween: 20 },
               1024: { slidesPerView: 3, spaceBetween: 30 },
@@ -301,31 +324,23 @@ export default function MainComponent() {
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
-                <Card className="p-6 h-full flex flex-col justify-between">
-                  <CardContent className="flex flex-col gap-4">
-                    <Typography
-                      variant="body1"
-                      className="text-muted-foreground text-center"
-                    >
-                      {testimonial.text}
-                    </Typography>
-                    <div className="flex flex-col items-center">
-                      <img
-                        src={testimonial.designation}
-                        alt={testimonial.name}
-                        className="w-16 h-16 rounded-full object-cover mb-2"
-                      />
-                      <Typography variant="h6" className="text-lg font-bold">
-                        {testimonial.name}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        className="text-muted-foreground"
-                      >
-                        {testimonial.position}
-                      </Typography>
+                <Card className="p-6 border rounded-lg shadow-lg bg-white min-h-[180px]">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="font-semibold text-lg">
+                      {testimonial.name}
                     </div>
-                  </CardContent>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonial.title}
+                    </div>
+                  </div>
+                  <blockquote className="text-sm leading-relaxed italic text-gray-600">
+                    {testimonial.review}
+                  </blockquote>
+                  <div className="flex items-center gap-1 mt-2 text-xs font-semibold text-yellow-500 mx-auto">
+                    {Array.from({ length: testimonial.rating }, (_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
                 </Card>
               </SwiperSlide>
             ))}
