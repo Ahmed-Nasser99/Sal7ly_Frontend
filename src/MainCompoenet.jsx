@@ -249,11 +249,10 @@ export default function MainComponent() {
             </Typography>
           </div>
           <Swiper
-            modules={[Navigation, Pagination, Virtual, Autoplay]}
+            modules={[Pagination, Virtual, Autoplay]}
             slidesPerView={4}
             spaceBetween={30}
             centeredSlides={true}
-            navigation
             loop
             dir={i18n.language === "ar" ? "rtl" : "ltr"}
             breakpoints={{
@@ -306,11 +305,10 @@ export default function MainComponent() {
           </div>
           <Swiper
             className="p-3"
-            modules={[Navigation, Pagination, Virtual, Autoplay]}
+            modules={[Pagination, Virtual, Autoplay]}
             slidesPerView={1}
             spaceBetween={30}
             dir={i18n.language === "ar" ? "rtl" : "ltr"}
-            navigation
             autoplay={{
               delay: 2500,
               disableOnInteraction: false,
