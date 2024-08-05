@@ -48,6 +48,7 @@ export default function MainComponent() {
   }, [i18n.language]);
 
   const phoneNumber = "+201102941029";
+  const displayPhoneNumber = "+201102941029";
   const email = "ahmednasserr86@gmail.com";
   const location = "٢ شارع اليمني - أرض اللواء - حي العجوزة - محافظة الجيزة";
   var brands = brandData;
@@ -66,7 +67,7 @@ export default function MainComponent() {
           <div className="flex items-center gap-4">
             <a href={`tel:${phoneNumber}`} className="flex items-center gap-1">
               <Phone className="w-5 h-5 text-green-500" />
-              <span className="hidden sm:inline">{phoneNumber}</span>
+              <span className="hidden sm:inline">{displayPhoneNumber}</span>
             </a>
             <Link
               href={`https://wa.me/${phoneNumber}`}
@@ -95,7 +96,7 @@ export default function MainComponent() {
             >
               {t("call_us_at")}{" "}
               <a href={`tel:${phoneNumber}`} className="font-bold">
-                {phoneNumber}
+                {displayPhoneNumber}
               </a>{" "}
               {t("or_chat")} {t("on")} {t("whatsapp")}
             </Typography>
@@ -195,7 +196,7 @@ export default function MainComponent() {
               loop
               dir={i18n.language === "ar" ? "rtl" : "ltr"}
               autoplay={{
-                delay: 5500,
+                delay: 2500,
                 disableOnInteraction: false,
               }}
               centeredSlides={true}
@@ -381,7 +382,7 @@ export default function MainComponent() {
                   className="text-muted-foreground text-center"
                 >
                   <a href={`tel:${phoneNumber}`} className="font-bold">
-                    {phoneNumber}
+                    {displayPhoneNumber}
                   </a>
                 </Typography>
               </CardContent>
@@ -423,7 +424,7 @@ export default function MainComponent() {
                     href={`https://wa.me/${phoneNumber}`}
                     className="font-bold"
                   >
-                    {phoneNumber}
+                    {displayPhoneNumber}
                   </a>
                 </Typography>
               </CardContent>
