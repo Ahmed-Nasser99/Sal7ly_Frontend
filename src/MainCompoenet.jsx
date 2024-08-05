@@ -46,7 +46,7 @@ export default function MainComponent() {
     document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
   }, [i18n.language]);
 
-  const phoneNumber = "01102941029";
+  const phoneNumber = "+201102941029";
   const email = "ahmednasserr86@gmail.com";
   const location = "٢ شارع اليمني - أرض اللواء - حي العجوزة - محافظة الجيزة";
   var brands = brandData;
