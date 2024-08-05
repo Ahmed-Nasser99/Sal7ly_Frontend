@@ -19,5 +19,17 @@
   "our_location": "موقعنا",
   "all_rights_reserved": "جميع الحقوق محفوظة.",
   "on": "علي",
-  "company_name": "صلحلي"
+  "company_name": "صلحلي",
+  "fefrigerator": "ثلاجات",
+  "washingMachines": "غسالات",
+  "airConditions": "تكيفات",
+  "cookingRange": "بوتجازات",
+  "vacuum": "مكنسة كهربائية",
+  "microwaveOven": "فرن ميكروويف",
+  "blender": "خلاط",
+  "dishWasher": "غسالة أطباق",
+  "television": "شاشات",
+  "waterDispenser": "مبرد مياه",
+  "waterHeater": "سخان مياه",
+  "standingFan": "مراوح"
 }

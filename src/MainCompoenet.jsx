@@ -221,7 +221,7 @@ export default function MainComponent() {
                     />
                     <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
                       <Typography variant="h6" className="text-lg font-bold">
-                        {service.title}
+                        {t(service.title)}
                       </Typography>
                     </CardContent>
                   </Card>
