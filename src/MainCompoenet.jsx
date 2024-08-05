@@ -192,6 +192,7 @@ export default function MainComponent() {
               slidesPerView={4}
               spaceBetween={30}
               loop
+              dir={i18n.language === "ar" ? "rtl" : "ltr"}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
@@ -254,6 +255,7 @@ export default function MainComponent() {
             centeredSlides={true}
             navigation
             loop
+            dir={i18n.language === "ar" ? "rtl" : "ltr"}
             breakpoints={{
               320: { slidesPerView: 1, spaceBetween: 10 },
               480: { slidesPerView: 1, spaceBetween: 20 },
@@ -307,6 +309,7 @@ export default function MainComponent() {
             modules={[Navigation, Pagination, Virtual, Autoplay]}
             slidesPerView={1}
             spaceBetween={30}
+            dir={i18n.language === "ar" ? "rtl" : "ltr"}
             navigation
             autoplay={{
               delay: 2500,
