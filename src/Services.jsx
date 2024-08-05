@@ -1,44 +1,63 @@
-import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
-import KitchenIcon from "@mui/icons-material/Kitchen";
-import MicrowaveIcon from "@mui/icons-material/Microwave";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
-import { Microwave, Tv } from "@mui/icons-material";
+import Vacuum from "./assets/Imgs/Appliances Images/82627287_Vacuum_-2-removebg-preview.png";
+import MicrowaveOven from "./assets/Imgs/Appliances Images/82628533_Microwave_Oven_-8-removebg-preview.png";
+import AirConditions from "./assets/Imgs/Appliances Images/AirConditions.png";
+import blender from "./assets/Imgs/Appliances Images/blender-isolated-transparent-background_191095-28788-removebg-preview.png";
+import dishwasher from "./assets/Imgs/Appliances Images/dishwasher-isolated-transparent-background_191095-25754-removebg-preview.png";
+import television from "./assets/Imgs/Appliances Images/modern-lcd-television_1035-9177-removebg-preview.png";
+import refrigerator from "./assets/Imgs/Appliances Images/refrigerator-isolated-transparent-background_1073071-5911-removebg-preview.png";
+import standingFan from "./assets/Imgs/Appliances Images/standing-fan-transparent-background-3d-rendering-illustration_494250-16213-removebg-preview.png";
+import cookingRange from "./assets/Imgs/Appliances Images/stove-isolated-transparent-background_191095-24264-removebg-preview.png";
+import washingMachines from "./assets/Imgs/Appliances Images/vacuum-isolated-transparent-background_191095-11644-removebg-preview.png";
+import waterDispenser from "./assets/Imgs/Appliances Images/water-dispenser-.png";
+import waterHeater from "./assets/Imgs/Appliances Images/white-water-heater-with-red-button-front-transparent-background_838900-75805-removebg-preview.png";
 
 export const servicesData = [
   {
-    icon: <LocalLaundryServiceIcon style={{ width: "5rem", height: "5rem" }} />,
-    title: "Washing Machine Repair",
-    description:
-      "Our experts can diagnose and repair any issue with your washing machine.",
+    icon: Vacuum,
+    title: "Vacuum",
   },
   {
-    icon: <KitchenIcon style={{ width: "5rem", height: "5rem" }} />,
-    title: "Refrigerator Repair",
-    description:
-      "Keep your food fresh with our reliable refrigerator repair services.",
+    icon: MicrowaveOven,
+    title: "Microwave Oven",
   },
   {
-    icon: <MicrowaveIcon style={{ width: "5rem", height: "5rem" }} />,
-    title: "Oven Repair",
-    description:
-      "Trust our experts to fix any issues with your oven or cooktop.",
+    icon: AirConditions,
+    title: "Air Conditions",
   },
   {
-    icon: <Microwave style={{ width: "5rem", height: "5rem" }} />,
-    title: "Microwave Repair",
-    description:
-      "Get your dishwasher back in top shape with our repair services.",
+    icon: blender,
+    title: "Blender",
   },
   {
-    icon: <AcUnitIcon style={{ width: "5rem", height: "5rem" }} />,
-    title: "Air Conditioner Repair",
-    description:
-      "Stay cool and comfortable with our air conditioning repair services.",
+    icon: dishwasher,
+    title: "Dish Washer",
   },
   {
-    icon: <Tv style={{ width: "5rem", height: "5rem" }} />,
-    title: "TV Repair",
-    description:
-      "Get your clothes dry again with our expert dryer repair services.",
+    icon: television,
+    title: "Television",
+  },
+  {
+    icon: refrigerator,
+    title: "Refrigerator",
+  },
+  {
+    icon: standingFan,
+    title: "Standing Fan",
+  },
+  {
+    icon: cookingRange,
+    title: "Cooking Range",
+  },
+  {
+    icon: washingMachines,
+    title: "Washing Machines",
+  },
+  {
+    icon: waterDispenser,
+    title: "Water Dispenser",
+  },
+  {
+    icon: waterHeater,
+    title: "Water Heater",
   },
 ];
