@@ -9,6 +9,7 @@ import {
   Typography,
   Link,
   Avatar,
+  CardMedia,
 } from "@mui/material";
 import {
   LocalPhone as LocalPhoneIcon,
@@ -194,7 +195,7 @@ export default function MainComponent() {
               loop
               dir={i18n.language === "ar" ? "rtl" : "ltr"}
               autoplay={{
-                delay: 2500,
+                delay: 5500,
                 disableOnInteraction: false,
               }}
               centeredSlides={true}
@@ -212,16 +213,15 @@ export default function MainComponent() {
               {services.map((service, index) => (
                 <SwiperSlide key={index} className="mx-auto">
                   <Card key={index} className="min-h-[250px]">
+                    <CardMedia
+                      component="img"
+                      height="150"
+                      image={service.icon}
+                      alt="green iguana"
+                    />
                     <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                      {service.icon}
                       <Typography variant="h6" className="text-lg font-bold">
                         {service.title}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        className="text-muted-foreground text-center"
-                      >
-                        {service.description}
                       </Typography>
                     </CardContent>
                   </Card>

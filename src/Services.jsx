@@ -13,16 +13,28 @@ import waterHeater from "./assets/Imgs/Appliances Images/white-water-heater-with
 
 export const servicesData = [
   {
+    icon: refrigerator,
+    title: "Refrigerator",
+  },
+  {
+    icon: washingMachines,
+    title: "Washing Machines",
+  },
+  {
+    icon: AirConditions,
+    title: "Air Conditions",
+  },
+  {
+    icon: cookingRange,
+    title: "Cooking Range",
+  },
+  {
     icon: Vacuum,
     title: "Vacuum",
   },
   {
     icon: MicrowaveOven,
     title: "Microwave Oven",
-  },
-  {
-    icon: AirConditions,
-    title: "Air Conditions",
   },
   {
     icon: blender,
@@ -37,27 +49,15 @@ export const servicesData = [
     title: "Television",
   },
   {
-    icon: refrigerator,
-    title: "Refrigerator",
-  },
-  {
-    icon: standingFan,
-    title: "Standing Fan",
-  },
-  {
-    icon: cookingRange,
-    title: "Cooking Range",
-  },
-  {
-    icon: washingMachines,
-    title: "Washing Machines",
-  },
-  {
     icon: waterDispenser,
     title: "Water Dispenser",
   },
   {
     icon: waterHeater,
     title: "Water Heater",
+  },
+  {
+    icon: standingFan,
+    title: "Standing Fan",
   },
 ];
