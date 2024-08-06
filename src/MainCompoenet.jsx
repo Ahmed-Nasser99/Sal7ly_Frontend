@@ -48,7 +48,7 @@ export default function MainComponent() {
   }, [i18n.language]);
 
   const phoneNumber = "+201102941029";
-  const displayPhoneNumber = "+201102941029";
+  const displayPhoneNumber = "01102941029";
   const email = "ahmednasserr86@gmail.com";
   const location = "٢ شارع اليمني - أرض اللواء - حي العجوزة - محافظة الجيزة";
   var brands = brandData;
@@ -83,7 +83,7 @@ export default function MainComponent() {
         </div>
       </header>
 
-      <Dialog open={open} onClose={handleClose}>
+      {/* <Dialog open={open} onClose={handleClose}>
         <DialogContent className="sm:max-w-[425px]">
           <div className="flex flex-col items-center justify-center gap-4 py-8">
             <LocalPhoneIcon
@@ -123,7 +123,7 @@ export default function MainComponent() {
             </Button>
           </DialogActions>
         </DialogContent>
-      </Dialog>
+      </Dialog> */}
 
       <section className="w-full py-16 md:pt-10 md:pb-6 lg:pt-16 lg:pb-8 h-screen">
         <div className="container mx-auto px-2 md:px-4 grid gap-3 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
