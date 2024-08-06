@@ -60,7 +60,7 @@ export default function MainComponent() {
       <header className="px-4 py-4 lg:px-6 h-14 flex items-center justify-between w-[95%] mx-auto fixed top-0 left-0 right-0 z-50 rounded-b-lg bg-background shadow-md overflow-hidden">
         <Link href="#" className="flex items-center gap-2">
           <div className="w-[150px] h-[90px] pt-2">
-            <img src={Logo} alt="Logo" className="w-full h-full" />
+            <img src={Logo} alt="صلحلي Sal7ly" className="w-full h-full" />
           </div>
         </Link>
         <div className="flex gap-4 items-center">
@@ -129,7 +129,7 @@ export default function MainComponent() {
         <div className="container mx-auto px-2 md:px-4 grid gap-3 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
           <img
             src={homeImageBackground}
-            alt="Hero"
+            alt="صيانة جميع الاجهزة الكهربائة"
             className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom sm:w-full lg:order-last lg:aspect-square bg-gray-400 h-full"
           />
           <div className="flex flex-col justify-center space-y-4">
@@ -218,7 +218,7 @@ export default function MainComponent() {
                       component="img"
                       height="150"
                       image={service.icon}
-                      alt="green iguana"
+                      alt={t(service.title)}
                     />
                     <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
                       <Typography variant="h6" className="text-lg font-bold">
