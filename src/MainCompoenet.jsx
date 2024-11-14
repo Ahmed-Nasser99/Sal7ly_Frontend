@@ -273,13 +273,27 @@ export default function MainComponent() {
           >
             {brands.map((brand, index) => (
               <SwiperSlide key={index}>
-                <div className="flex items-center justify-center p-6 h-[150px] rounded-2xl overflow-hidden">
-                  <img
-                    src={brand.logo}
-                    alt={brand.name}
-                    className="max-h-[100px] object-contain"
-                  />
-                </div>
+                {brand?.href ? (
+                  <Link
+                    href={brand?.href}
+                    target="_blank"
+                    className="flex items-center justify-center p-6 h-[150px] rounded-2xl overflow-hidden"
+                  >
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className="max-h-[100px] object-contain"
+                    />
+                  </Link>
+                ) : (
+                  <div className="flex items-center justify-center p-6 h-[150px] rounded-2xl overflow-hidden">
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className="max-h-[100px] object-contain"
+                    />
+                  </div>
+                )}
               </SwiperSlide>
             ))}
           </Swiper>

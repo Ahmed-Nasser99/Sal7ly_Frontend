@@ -40,8 +40,9 @@ export var brandData = [
     logo: BoschLogo,
   },
   {
-    name: "Sharp",
+    name: "صيانة أعطال شارب فى مصر",
     logo: SharpLogo,
+    href: "https://sharp-maintenance.vercel.app/",
   },
   {
     name: "Ariston",
